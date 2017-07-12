@@ -1,4 +1,4 @@
-package com.sumit.medicinereminder.ViewController;
+package com.sumit.medicinereminder.Fragments;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.github.fabtransitionactivity.SheetLayout;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
+import com.sumit.medicinereminder.Activity.PillBoxActivity;
 import com.sumit.medicinereminder.Model.History;
 import com.sumit.medicinereminder.Model.PillBox;
 import com.sumit.medicinereminder.R;

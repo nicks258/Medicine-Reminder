@@ -1,4 +1,4 @@
-package com.sumit.medicinereminder.ViewController;
+package com.sumit.medicinereminder.Fragments;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.github.fabtransitionactivity.SheetLayout;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
+import com.sumit.medicinereminder.Activity.AddActivity;
 import com.sumit.medicinereminder.Model.Alarm;
 import com.sumit.medicinereminder.Model.PillBox;
 import com.sumit.medicinereminder.R;
@@ -26,17 +27,20 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
+public class TodayFragment extends Fragment implements SheetLayout.OnFabAnimationEndListener,View.OnClickListener {
 
-public class TomorrowFragment extends Fragment implements SheetLayout.OnFabAnimationEndListener,View.OnClickListener {
     SheetLayout mSheetLayout;
     FloatingActionButton mFab;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_tomorrow, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_today, container, false);
 
-        TableLayout stk = (TableLayout) rootView.findViewById(R.id.table_tomorrow);
+        TableLayout stk = (TableLayout) rootView.findViewById(R.id.table_today);
+
+        Typeface lightFont = Typeface.createFromAsset(container.getContext().getAssets(), "fonts/Roboto-Light.ttf");
         mSheetLayout = (SheetLayout) rootView.findViewById(R.id.bottom_sheet);
         mFab = (FloatingActionButton) rootView.findViewById(R.id.fab);
         mFab.setOnClickListener(new View.OnClickListener() {
@@ -45,16 +49,11 @@ public class TomorrowFragment extends Fragment implements SheetLayout.OnFabAnima
                 mSheetLayout.expandFab();
             }
         });
-        Typeface lightFont = Typeface.createFromAsset(container.getContext().getAssets(), "fonts/Roboto-Light.ttf");
+        PillBox pillBox = new PillBox();
         mSheetLayout.setFab(mFab);
         mSheetLayout.setFabAnimationEndListener(this);
-        PillBox pillBox = new PillBox();
-
         Calendar calendar = Calendar.getInstance();
-        int day = calendar.get(Calendar.DAY_OF_WEEK) + 1;
-        if(day == 8)
-            day = 1;
-
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
         List<Alarm> alarms = Collections.emptyList();
 
         try {
@@ -63,8 +62,8 @@ public class TomorrowFragment extends Fragment implements SheetLayout.OnFabAnima
             e.printStackTrace();
         }
 
-        if(alarms.size() != 0) {
-            for(Alarm alarm: alarms) {
+        if (alarms.size() != 0) {
+            for (Alarm alarm : alarms) {
                 TableRow tbrow = new TableRow(container.getContext());
 
                 TextView t1v = new TextView(container.getContext());
@@ -74,12 +73,13 @@ public class TomorrowFragment extends Fragment implements SheetLayout.OnFabAnima
                 t1v.setPadding(30, 30, 30, 30);
                 t1v.setTextSize(25);
                 t1v.setTypeface(lightFont);
+                t1v.setMaxEms(6);
+
                 tbrow.addView(t1v);
 
                 TextView t2v = new TextView(container.getContext());
 
                 String time = alarm.getStringTime();
-
                 t2v.setText(time);
                 t2v.setTextColor(Color.DKGRAY);
                 t2v.setGravity(Gravity.CENTER);
@@ -94,7 +94,7 @@ public class TomorrowFragment extends Fragment implements SheetLayout.OnFabAnima
             TableRow tbrow = new TableRow(container.getContext());
 
             TextView t1v = new TextView(container.getContext());
-            t1v.setText("You don't have any alarms for Tomorrow!");
+            t1v.setText("You don't have any alarms for Today!");
             t1v.setTextColor(Color.DKGRAY);
             t1v.setGravity(Gravity.CENTER);
             t1v.setPadding(30, 30, 30, 30);
@@ -107,9 +107,15 @@ public class TomorrowFragment extends Fragment implements SheetLayout.OnFabAnima
         }
         return rootView;
     }
+
+//    @OnClick(R.id.fab)
+//    void onFabClick() {
+//        mSheetLayout.expandFab();
+//    }
+
     @Override
     public void onFabAnimationEnd() {
-        Intent intent = new Intent(getActivity(), ScheduleActivity.class);
+        Intent intent = new Intent(getActivity(), AddActivity.class);
         startActivity(intent);
     }
 
@@ -122,5 +128,12 @@ public class TomorrowFragment extends Fragment implements SheetLayout.OnFabAnima
             Logger.i("Clicked");
         }
     }
-}
 
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == REQUEST_CODE) {
+//            mSheetLayout.contractFab();
+//        }
+//    }
+}

@@ -1,4 +1,4 @@
-package com.sumit.medicinereminder.ViewController;
+package com.sumit.medicinereminder.Util;
 
 /**
  * Created by Sumit on 13-Jul-17.
@@ -20,6 +20,8 @@ import android.view.WindowManager.LayoutParams;
 
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
+import com.sumit.medicinereminder.Activity.AlertActivity;
+import com.sumit.medicinereminder.Activity.MainActivity;
 import com.sumit.medicinereminder.R;
 
 

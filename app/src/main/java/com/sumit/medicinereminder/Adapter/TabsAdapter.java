@@ -1,4 +1,4 @@
-package com.sumit.medicinereminder.ViewController.adapter;
+package com.sumit.medicinereminder.Adapter;
 
 /**
  * Created by Sumit on 13-Jul-17.
@@ -8,9 +8,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.sumit.medicinereminder.ViewController.HistoryFragment;
-import com.sumit.medicinereminder.ViewController.TodayFragment;
-import com.sumit.medicinereminder.ViewController.TomorrowFragment;
+import com.sumit.medicinereminder.Fragments.HistoryFragment;
+import com.sumit.medicinereminder.Fragments.TodayFragment;
+import com.sumit.medicinereminder.Fragments.TomorrowFragment;
 
 
 /**

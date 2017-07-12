@@ -1,4 +1,4 @@
-package com.sumit.medicinereminder.ViewController;
+package com.sumit.medicinereminder.Util;
 
 import android.content.Context;
 import android.graphics.Color;

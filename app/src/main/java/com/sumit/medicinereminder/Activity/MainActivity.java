@@ -1,4 +1,4 @@
-package com.sumit.medicinereminder.ViewController;
+package com.sumit.medicinereminder.Activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -14,7 +14,7 @@ import android.view.Gravity;
 import android.widget.TextView;
 
 import com.sumit.medicinereminder.R;
-import com.sumit.medicinereminder.ViewController.adapter.TabsAdapter;
+import com.sumit.medicinereminder.Adapter.TabsAdapter;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

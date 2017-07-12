@@ -1,4 +1,4 @@
-package com.sumit.medicinereminder.ViewController;
+package com.sumit.medicinereminder.Activity;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -12,6 +12,7 @@ import com.orhanobut.logger.Logger;
 import com.sumit.medicinereminder.Model.History;
 import com.sumit.medicinereminder.Model.Pill;
 import com.sumit.medicinereminder.Model.PillBox;
+import com.sumit.medicinereminder.Util.AlertAlarm;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

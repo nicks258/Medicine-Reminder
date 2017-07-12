@@ -1,4 +1,4 @@
-package com.sumit.medicinereminder.ViewController;
+package com.sumit.medicinereminder.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +17,7 @@ import com.sumit.medicinereminder.Model.Pill;
 import com.sumit.medicinereminder.Model.PillBox;
 import com.sumit.medicinereminder.Model.PillComparator;
 import com.sumit.medicinereminder.R;
-import com.sumit.medicinereminder.ViewController.adapter.ExpandableListAdapter;
+import com.sumit.medicinereminder.Adapter.ExpandableListAdapter;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
