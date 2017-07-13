@@ -1,6 +1,8 @@
 Due to less time I just use Firebase Test Lab to perform Automation Testing. They uses robotium framework for testing. i attached vedio and screenShot with my 
 github repo. If you need more details regarding Firebase Test Lab i can share my Firebase Project With you 
 
+Released Apk Link -> https://www.dropbox.com/s/l3j6ug7zorobaju/app-release.apk?dl=0
+
 - Thanks
 Sumit Mehra
 8144240078
